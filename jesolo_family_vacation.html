@@ -1,427 +1,662 @@
 <!--
-  Relaxed Family Vacation Plan for Lido di Jesolo
-
-  This page outlines a calm, family‑friendly itinerary for a 10‑day stay in Lido di Jesolo (1–12 June).
-  It compares the main areas of town, recommends a handful of restaurants with exact addresses and
-  embedded maps, proposes two easy day‑trips, and lays out a day‑by‑day schedule with practical tips.
-
-  Maps are included via simple Google Maps iframes. They point to the approximate address of each
-  location so you can visually identify where everything sits in relation to your hotel. When opening
-  this file locally you will need an internet connection for the maps to load.
+  Relaxed Family Vacation Plan for Lido di Jesolo — Duolingo-style, touristic-brochure redesign
+  1–13 July 2026 · 12 nights · Enia - Carraro Immobiliare, Via Dante Alighieri 98, Lido di Jesolo
+  Fully restructured into a day-by-day itinerary (day trips folded into their day), with an
+  added "Getting there" route from Venice Marco Polo Airport and a "Your stay" booking summary.
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Relaxed Family Vacation Plan – Lido di Jesolo (1–12 June)</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.5;
-      margin: 0;
-      padding: 0;
-      color: #333;
-      background-color: #f7f7f7;
-    }
-    header, section {
-      padding: 20px;
-      margin: 0 auto;
-      max-width: 960px;
-      background-color: #fff;
-      margin-bottom: 20px;
-      border-radius: 6px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    h1, h2, h3 {
-      color: #003366;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-      margin-bottom: 20px;
-      font-size: 0.95em;
-    }
-    th, td {
-      border: 1px solid #ccc;
-      padding: 8px;
-      text-align: left;
-      vertical-align: top;
-    }
-    th {
-      background-color: #e6f0fa;
-    }
-    iframe {
-      width: 100%;
-      height: 220px;
-      border: 0;
-      margin-top: 5px;
-    }
-    .restaurant {
-      margin-bottom: 25px;
-    }
-    .daily-plan table {
-      font-size: 0.9em;
-    }
-    .tip-list li {
-      margin-bottom: 6px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jesolo Family Adventure – 1–13 July 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#58CC02; --green-dark:#46A302; --green-pale:#D7FFB8; --green-text:#3C8500;
+    --blue:#1CB0F6; --blue-dark:#1899D6; --blue-pale:#DDF4FF; --blue-text:#1177A8;
+    --red:#FF4B4B; --red-dark:#EA2B2B; --red-pale:#FFDFE0; --red-text:#C82A2A;
+    --yellow:#FFC800; --yellow-dark:#E5AC00; --yellow-pale:#FFF4CC; --yellow-text:#8A6D00;
+    --purple:#CE82FF; --purple-dark:#A568CC; --purple-pale:#F3E5FF; --purple-text:#8A3FD1;
+    --bg:#F7F9FA; --ink:#3C3C3C; --ink-soft:#6B6B6B; --line:#E5E5E5; --white:#FFFFFF;
+    --gold:#E8A400;
+  }
+  *{box-sizing:border-box;}
+  body{
+    font-family:'Nunito',sans-serif; margin:0; padding:0; background:var(--bg);
+    color:var(--ink); line-height:1.55;
+  }
+  h1,h2,h3,h4{font-family:'Baloo 2',sans-serif; font-weight:700; color:var(--ink); margin-top:0;}
+  .wrap{max-width:980px; margin:0 auto; padding:0 16px;}
+
+  /* ---------- Header ---------- */
+  .hero{
+    background:linear-gradient(180deg,var(--green) 0%, var(--green) 65%, var(--green-dark) 100%);
+    color:#fff; padding:38px 0 60px; position:relative; overflow:hidden;
+  }
+  .flag-stripe{height:6px; display:flex;}
+  .flag-stripe span{flex:1;}
+  .flag-stripe .g{background:#009246;} .flag-stripe .w{background:#f1f2f1;} .flag-stripe .r{background:#ce2b37;}
+  .hero::after{
+    content:""; position:absolute; left:0; right:0; bottom:-1px; height:34px;
+    background:var(--bg); border-radius:50% 50% 0 0 / 100% 100% 0 0; transform:scaleX(1.4);
+  }
+  .hero h1{color:#fff; font-size:2.1rem; margin-bottom:6px;}
+  .hero p{max-width:640px; font-size:1.05rem; color:#EFFFE0; margin-top:0;}
+  .hero-badges{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;}
+  .pill{
+    display:inline-flex; align-items:center; gap:6px; padding:8px 16px; border-radius:999px;
+    font-weight:800; font-size:.85rem; font-family:'Baloo 2',sans-serif;
+  }
+  .pill-white{background:rgba(255,255,255,.22); color:#fff; border:2px solid rgba(255,255,255,.4);}
+
+  /* ---------- Stay card (overlaps hero bottom) ---------- */
+  .stay-card{
+    background:var(--white); border:2px solid var(--line); border-bottom-width:4px; border-radius:18px;
+    padding:20px 22px; margin-top:-40px; position:relative; z-index:5; box-shadow:0 6px 18px rgba(0,0,0,.06);
+  }
+  .stay-card h2{font-size:1.15rem; display:flex; align-items:center; gap:8px; margin-bottom:12px;}
+  .stay-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+  .stay-item{font-size:.88rem;}
+  .stay-item .lbl{display:block; font-family:'Baloo 2',sans-serif; font-weight:700; font-size:.72rem; text-transform:uppercase; color:var(--ink-soft); margin-bottom:2px;}
+  .stay-item b{font-size:.95rem;}
+  .stay-note{grid-column:1/-1; background:var(--yellow-pale); border-radius:10px; padding:10px 14px; font-size:.85rem; margin-top:4px;}
+  .stay-note i{color:var(--ink-soft);}
+
+  /* ---------- Sticky nav ---------- */
+  nav.tabs{
+    position:sticky; top:0; z-index:20; background:var(--white);
+    border-bottom:2px solid var(--line); padding:10px 0;
+  }
+  nav.tabs .wrap{display:flex; gap:8px; overflow-x:auto; padding-bottom:2px;}
+  nav.tabs a{
+    flex:0 0 auto; text-decoration:none; font-family:'Baloo 2',sans-serif; font-weight:700;
+    font-size:.85rem; color:var(--ink-soft); background:var(--bg); border:2px solid var(--line);
+    padding:8px 14px; border-radius:999px; white-space:nowrap;
+  }
+  nav.tabs a:hover{color:var(--green-text); border-color:var(--green);}
+
+  /* ---------- Sections ---------- */
+  section{padding:34px 0;}
+  .section-head{display:flex; align-items:center; gap:12px; margin-bottom:18px;}
+  .section-num{
+    flex:0 0 auto; width:38px; height:38px; border-radius:12px; display:flex;
+    align-items:center; justify-content:center; font-family:'Baloo 2',sans-serif;
+    font-weight:800; color:#fff; font-size:1.05rem;
+  }
+  .section-head h2{font-size:1.5rem;}
+  .lede{color:var(--ink-soft); max-width:720px; margin-bottom:20px;}
+
+  /* ---------- Card base (Duolingo "pressable" style) ---------- */
+  .card{
+    background:var(--white); border:2px solid var(--line); border-bottom-width:4px;
+    border-radius:16px; padding:20px;
+  }
+
+  /* ---------- Getting there ---------- */
+  .route-line{display:flex; align-items:center; gap:10px; margin:18px 0; font-family:'Baloo 2',sans-serif; font-weight:700; color:var(--ink-soft);}
+  .route-line .stop{display:flex; flex-direction:column; align-items:center; font-size:.8rem; gap:4px; color:var(--ink);}
+  .route-line .stop .icon{font-size:1.6rem;}
+  .route-line .dash{flex:1; height:0; border-top:3px dashed var(--blue); position:relative; min-width:40px;}
+  .route-line .dash::after{content:"✈️"; position:absolute; left:50%; top:-13px; transform:translateX(-50%); font-size:1rem;}
+  .grid-3-opt{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:16px;}
+  .opt-card h3{font-size:1rem; display:flex; gap:8px; align-items:center;}
+  .opt-card .meta{font-family:'Baloo 2',sans-serif; font-weight:800; color:var(--blue-text); font-size:.85rem; margin:6px 0;}
+  .opt-card p{font-size:.86rem; margin:6px 0 0; color:var(--ink-soft);}
+
+  /* ---------- Area cards ---------- */
+  .grid-2{display:grid; grid-template-columns:repeat(2,1fr); gap:16px;}
+  .area-card{position:relative;}
+  .area-card.best{border-color:var(--green); background:var(--green-pale);}
+  .area-card h3{font-size:1.15rem; display:flex; align-items:center; gap:8px; margin-bottom:8px;}
+  .area-card .stat{margin:6px 0; font-size:.92rem;}
+  .area-card .stat b{color:var(--ink);}
+  .crown{position:absolute; top:-12px; right:14px; background:var(--yellow); color:#7A5A00;
+    font-family:'Baloo 2',sans-serif; font-weight:800; font-size:.75rem; padding:5px 12px;
+    border-radius:999px; border:2px solid var(--yellow-dark); box-shadow:0 2px 0 var(--yellow-dark);}
+  details.maps{margin-top:16px;}
+  details.maps summary{
+    cursor:pointer; font-family:'Baloo 2',sans-serif; font-weight:700; color:var(--blue-text);
+    padding:6px 0; list-style:none;
+  }
+  details.maps summary::-webkit-details-marker{display:none;}
+  details.maps summary::before{content:"📍 "; }
+  .map-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:10px;}
+  .map-box{border-radius:12px; overflow:hidden; border:2px solid var(--line);}
+  .map-box h4{font-size:.85rem; margin:0; padding:8px 10px; background:var(--bg);}
+  iframe{width:100%; height:180px; border:0; display:block;}
+
+  /* ---------- Recommendation banner ---------- */
+  .callout{
+    display:flex; gap:14px; align-items:flex-start; background:var(--blue-pale);
+    border:2px solid var(--blue); border-radius:16px; padding:16px 18px; margin-top:18px;
+  }
+  .callout .emoji{font-size:1.6rem;}
+  .callout b{color:var(--blue-text);}
+
+  /* ---------- Restaurant cards ---------- */
+  .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+  .r-card h3{font-size:1.05rem; margin-bottom:4px;}
+  .r-card .addr{font-size:.82rem; color:var(--ink-soft); margin-bottom:6px;}
+  .stars{color:var(--gold); font-size:.85rem; letter-spacing:1px; margin-bottom:6px;}
+  .stars small{color:var(--ink-soft); font-family:'Nunito',sans-serif; letter-spacing:0; font-size:.7rem;}
+  .badge-row{display:flex; flex-wrap:wrap; gap:6px; margin:10px 0;}
+  .badge{
+    font-family:'Baloo 2',sans-serif; font-weight:700; font-size:.72rem; padding:4px 10px;
+    border-radius:999px;
+  }
+  .badge-green{background:var(--green-pale); color:var(--green-text);}
+  .badge-blue{background:var(--blue-pale); color:var(--blue-text);}
+  .badge-yellow{background:var(--yellow-pale); color:var(--yellow-text);}
+  .badge-red{background:var(--red-pale); color:var(--red-text);}
+  .badge-purple{background:var(--purple-pale); color:var(--purple-text);}
+  .r-card p.why{font-size:.9rem; margin:8px 0;}
+  .r-card iframe{border-radius:10px; height:140px; margin-top:8px;}
+
+  /* ---------- Day-by-day path ---------- */
+  .path{position:relative; margin-top:10px;}
+  .path::before{
+    content:""; position:absolute; left:23px; top:10px; bottom:10px; width:4px;
+    background:var(--line); border-radius:4px;
+  }
+  .day-node{position:relative; display:flex; gap:18px; margin-bottom:18px;}
+  .day-circle{
+    flex:0 0 auto; width:48px; height:48px; border-radius:50%; display:flex; align-items:center;
+    justify-content:center; font-family:'Baloo 2',sans-serif; font-weight:800; color:#fff;
+    font-size:1.1rem; position:relative; z-index:1; box-shadow:0 3px 0 rgba(0,0,0,.15);
+  }
+  .day-card{flex:1; padding-top:2px;}
+  .day-card.big{background:var(--white); border:2px solid var(--line); border-bottom-width:4px; border-radius:16px; padding:16px 18px;}
+  .day-card .day-title{font-family:'Baloo 2',sans-serif; font-weight:800; font-size:1rem; margin-bottom:2px;}
+  .day-card .day-sub{font-size:.78rem; color:var(--ink-soft); margin-bottom:10px;}
+  .day-table{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; font-size:.85rem;}
+  .day-table div{background:var(--bg); border-radius:10px; padding:8px 10px;}
+  .day-table .lbl{font-family:'Baloo 2',sans-serif; font-weight:700; font-size:.7rem; text-transform:uppercase; color:var(--ink-soft); display:block; margin-bottom:3px;}
+  .stamp{
+    display:inline-flex; align-items:center; gap:6px; font-family:'Baloo 2',sans-serif; font-weight:800;
+    font-size:.72rem; color:var(--purple-dark); border:2px dashed var(--purple); border-radius:999px;
+    padding:4px 12px; transform:rotate(-2deg); margin-bottom:8px;
+  }
+  .skip-box{background:var(--red-pale); border:2px solid var(--red); border-radius:12px; padding:10px 14px; margin-top:12px; font-size:.85rem;}
+  .skip-box b{color:var(--red-text);}
+  .fee-free{background:var(--green-pale); border:2px solid var(--green); border-radius:12px; padding:8px 14px; margin-top:10px; font-size:.85rem; color:var(--green-text); font-weight:700; font-family:'Baloo 2',sans-serif;}
+
+  /* ---------- Tips checklist ---------- */
+  .tip-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px;}
+  .tip-card{display:flex; gap:12px; align-items:flex-start;}
+  .tip-check{
+    flex:0 0 auto; width:28px; height:28px; border-radius:50%; background:var(--green);
+    color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:.9rem;
+  }
+  .tip-card.avoid .tip-check{background:var(--red);}
+  .tip-card.hack .tip-check{background:var(--purple);}
+  .hacks-head{font-family:'Baloo 2',sans-serif; font-weight:800; font-size:1.15rem; margin:26px 0 4px; display:flex; align-items:center; gap:8px; justify-content:center;}
+  .hacks-sub{color:var(--ink-soft); font-size:.88rem; margin-bottom:16px;}
+
+  /* ---------- Summary / trophy ---------- */
+  .trophy-card{
+    background:linear-gradient(135deg,var(--yellow-pale),var(--white));
+    border:2px solid var(--yellow-dark); text-align:center; padding:30px 20px;
+  }
+  .trophy-card .big-emoji{font-size:2.6rem;}
+  .summary-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; text-align:left; margin-top:20px;}
+  .summary-grid .card h3{font-size:1rem; display:flex; gap:8px; align-items:center;}
+  .summary-grid .card p{font-size:.9rem; margin:6px 0 0;}
+
+  footer{text-align:center; padding:26px 16px 40px; font-size:.8rem; color:var(--ink-soft);}
+
+  @media(max-width:760px){
+    .grid-2, .grid-3, .grid-3-opt, .map-grid, .day-table, .tip-grid, .summary-grid, .stay-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:1.6rem;}
+  }
+</style>
 </head>
 <body>
-  <header>
-    <h1>Relaxed Family Vacation Plan – Lido di Jesolo (1–12 June)</h1>
-    <p>This plan is designed for a family with children aged 5, 8 and 10. It focuses on
-    calm beach time, good food and evening walks, with only two easy day trips
-    (Venice and Caorle) during a 10‑day stay. All addresses and maps are provided to
-    help you get oriented.</p>
-  </header>
 
+<div class="hero">
+  <div class="wrap">
+    <h1>🌞 Jesolo Family Adventure</h1>
+    <p>A relaxed, no-rush plan for a 12-night beach holiday with kids aged 5, 8 and 10 — <strong>1–13 July 2026</strong>. Big beach mornings, easy dinners, and just two day trips.</p>
+    <div class="hero-badges">
+      <span class="pill pill-white">🏖️ 12 nights</span>
+      <span class="pill pill-white">👨‍👩‍👧‍👦 Ages 5–10</span>
+      <span class="pill pill-white">✈️ VCE → Jesolo</span>
+      <span class="pill pill-white">🚌 2 day trips only</span>
+      <span class="pill pill-white">🍕 7 places to eat</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="stay-card">
+    <h2>🔑 Your stay</h2>
+    <div class="stay-grid">
+      <div class="stay-item"><span class="lbl">Property</span><b>Enia · Carraro Immobiliare</b><br>Family Apartments</div>
+      <div class="stay-item"><span class="lbl">Check-in</span><b>Wed 1 July, 16:00–19:00</b></div>
+      <div class="stay-item"><span class="lbl">Check-out</span><b>Mon 13 July, 08:00–10:00</b></div>
+      <div class="stay-item"><span class="lbl">Party</span><b>2 adults + 3 kids (5, 8, 10)</b><br>1 apartment · 12 nights</div>
+      <div class="stay-item"><span class="lbl">Apartment address</span><b>Via Dante Alighieri 98</b><br>30016 Lido di Jesolo, Italy</div>
+      <div class="stay-item"><span class="lbl">Key pick-up</span><b>Via Goffredo Mameli 103A</b><br>30016 Jesolo VE (same parking as the Zanutta store)</div>
+      <div class="stay-note"><i>📍 Good sign:</i> Via Dante Alighieri sits right around the <b>Piazza Milano</b> area — the calm, family-friendly zone we'd recommend for sleeping anyway. Worth confirming exact walking distance to the beach when you check in.</div>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs">
+  <div class="wrap">
+    <a href="#getting-there">✈️ Getting There</a>
+    <a href="#areas">🗺️ Areas</a>
+    <a href="#food">🍝 Food</a>
+    <a href="#schedule">📅 Day-by-Day</a>
+    <a href="#practical">💡 Tips</a>
+    <a href="#summary">🏆 Recap</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <!-- ================= GETTING THERE ================= -->
+  <section id="getting-there">
+    <div class="section-head">
+      <div class="section-num" style="background:var(--blue);">✈️</div>
+      <h2>Getting there: airport → apartment</h2>
+    </div>
+    <p class="lede">Flying into <b>Venice Marco Polo Airport (VCE)</b> — about 33&nbsp;km / 35–45 minutes from your apartment. Here are your three main options; prices and schedules are indicative, so double-check before you fly.</p>
+
+    <div class="route-line">
+      <div class="stop"><span class="icon">🛬</span>VCE Airport</div>
+      <div class="dash"></div>
+      <div class="stop"><span class="icon">🏖️</span>Via Dante Alighieri 98</div>
+    </div>
+
+    <div class="grid-3-opt">
+      <div class="card opt-card">
+        <h3>🚌 ATVO airport bus</h3>
+        <div class="meta">~45–70 min · roughly €12–15/adult</div>
+        <p>Direct coach service between the airport and Jesolo, runs roughly hourly all day. Easiest budget option, but tight with lots of luggage and three kids — check the timetable matches your landing time.</p>
+      </div>
+      <div class="card opt-card">
+        <h3>🚕 Taxi / private transfer</h3>
+        <div class="meta">~35–45 min · roughly €90–130 fixed</div>
+        <p>Door-to-door, no transfers. Worth pre-booking a fixed-rate private transfer for a family of 5 with luggage, especially if you land outside normal hours.</p>
+      </div>
+      <div class="card opt-card">
+        <h3>🚗 Rental car</h3>
+        <div class="meta">~35–45 min</div>
+        <p>Follow the SR14 Triestina or A4 motorway toward the Jesolo/Caorle exit, then SR43 into Lido di Jesolo. Handy if you want flexibility for beach-day errands or the optional Murano/Burano add-on.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="emoji">🕓</div>
+      <div>Your check-in window is <b>16:00–19:00</b> on 1 July — an early or midday flight gives you breathing room. Landing later? Message the property in advance about a late check-in.</div>
+    </div>
+
+    <details class="maps">
+      <summary>Show route map</summary>
+      <iframe src="https://www.google.com/maps?saddr=Venice+Marco+Polo+Airport,+Italy&daddr=Via+Dante+Alighieri+98,+30016+Lido+di+Jesolo,+Italy&output=embed" style="border-radius:12px; margin-top:10px; height:260px;"></iframe>
+    </details>
+  </section>
+
+  <!-- ================= AREAS ================= -->
   <section id="areas">
-    <h2>1. Best family areas in Lido di Jesolo</h2>
-    <p>Lido di Jesolo is organised around several piazzas along its 15 km beach. Each area
-    has a different character. The following table compares them and recommends where
-    to stay for a calm family holiday.</p>
-    <table>
-      <thead>
-        <tr>
-          <th>Area</th>
-          <th>Atmosphere &amp; noise</th>
-          <th>Beach access &amp; family suitability</th>
-          <th>Evening walks &amp; notes</th>
-          <th>Stay / visit?</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Piazza Milano</strong></td>
-          <td>Residential and calm, mostly local families; low to medium noise levels.</td>
-          <td>Long, wide beach with gentle entry—ideal for young children【968199478083773†L53-L96】.</td>
-          <td>Promenade along <em>Via&nbsp;Altinate</em> is traffic‑free after 20:00; good for evening strolls. Few
-          night‑clubs.</td>
-          <td><strong>Best area to stay</strong> for a relaxed family holiday.</td>
-        </tr>
-        <tr>
-          <td><strong>Piazza Mazzini</strong></td>
-          <td>Lively and central with lots of bars and nightlife【259664263547122†L188-L202】.</td>
-          <td>Well‑equipped beach sectors but crowded in summer; suitable for older children.</td>
-          <td>Evening promenade on <em>Via&nbsp;Bafile</em> (car‑free after 20:00). Nightlife makes it noisy late.</td>
-          <td>Better for visiting once or twice; not ideal for sleeping with young kids.</td>
-        </tr>
-        <tr>
-          <td><strong>Piazza Brescia</strong></td>
-          <td>Central and busy; hosts events and attractions like the Wheel of Venice.</td>
-          <td>Good beach access but crowds; near Tropicarium Park and science exhibits.</td>
-          <td>Nice evening stroll to the Ferris wheel; good for a change of scene.</td>
-          <td>Visit for an evening; not essential for accommodation.</td>
-        </tr>
-        <tr>
-          <td><strong>Piazza Drago</strong></td>
-          <td>Practical area near bus station; medium noise level.</td>
-          <td>Close to central beach and amenities but lacks charm.</td>
-          <td>Useful if you prioritise transport connections.</td>
-          <td>Only stay here if you find a quiet hotel; otherwise visit briefly.</td>
-        </tr>
-      </tbody>
-    </table>
-    <p><strong>Recommendation:</strong> base your family in the Piazza Milano area for a quieter
-    atmosphere, spacious beach and easy evening walks.</p>
-    <h3>Area maps</h3>
-    <p>Each map below points to the approximate centre of the piazza so you can see
-    where it sits within Jesolo:</p>
-    <h4>Piazza Milano</h4>
-    <iframe
-      src="https://www.google.com/maps?q=Piazza+Milano,+Lido+di+Jesolo,+VE,+Italy&amp;output=embed"></iframe>
-    <h4>Piazza Mazzini</h4>
-    <iframe
-      src="https://www.google.com/maps?q=Piazza+Mazzini,+Lido+di+Jesolo,+VE,+Italy&amp;output=embed"></iframe>
-    <h4>Piazza Brescia</h4>
-    <iframe
-      src="https://www.google.com/maps?q=Piazza+Brescia,+Lido+di+Jesolo,+VE,+Italy&amp;output=embed"></iframe>
-    <h4>Piazza Drago</h4>
-    <iframe
-      src="https://www.google.com/maps?q=Piazza+Drago,+Lido+di+Jesolo,+VE,+Italy&amp;output=embed"></iframe>
+    <div class="section-head">
+      <div class="section-num" style="background:var(--green);">1</div>
+      <h2>Best family areas in Jesolo</h2>
+    </div>
+    <p class="lede">Lido di Jesolo is organised around several piazzas along its 15&nbsp;km beach, each with its own character. You're already booked, so here's the lay of the land around your door, plus how the other piazzas compare if you wander further.</p>
+
+    <div class="callout" style="background:var(--green-pale); border-color:var(--green);">
+      <div class="emoji">📍</div>
+      <div>
+        <b>Near your apartment (Via Dante Alighieri 98):</b> this address sits toward the quieter western stretch of the street, in the Piazza Milano / Piazza Marconi neighbourhood — based on nearby numbers on the same road, expect somewhere around a 5–15 minute walk to the sand (worth confirming the exact distance with your host on arrival). <b>Da Omar</b> is a few doors down the same street, and <b>La Cambusa</b> is a short walk away in the Piazza Milano square itself — your two most convenient dinner options without needing a bus or bike.
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top:16px;">
+      <div class="card area-card best">
+        <span class="crown">👑 YOUR AREA</span>
+        <h3>🏡 Piazza Milano</h3>
+        <p class="stat"><b>Vibe:</b> Residential and calm, mostly local families, low-to-medium noise.</p>
+        <p class="stat"><b>Beach:</b> Long, wide, gentle entry — great for young children.</p>
+        <p class="stat"><b>Evenings:</b> Via Altinate is traffic-free after 20:00, few nightclubs nearby.</p>
+      </div>
+      <div class="card area-card">
+        <h3>🎉 Piazza Mazzini</h3>
+        <p class="stat"><b>Vibe:</b> Lively and central, lots of bars and nightlife.</p>
+        <p class="stat"><b>Beach:</b> Well-equipped but crowded in summer; fine for older kids.</p>
+        <p class="stat"><b>Evenings:</b> Via Bafile car-free after 20:00, but noisy late — good for a visit, further from your apartment.</p>
+      </div>
+      <div class="card area-card">
+        <h3>🎡 Piazza Brescia</h3>
+        <p class="stat"><b>Vibe:</b> Central and busy, hosts events and the Wheel of Venice.</p>
+        <p class="stat"><b>Beach:</b> Good access but crowded; near Tropicarium Park.</p>
+        <p class="stat"><b>Evenings:</b> Nice for a Ferris-wheel stroll and change of scene — a bus or bike ride from your apartment.</p>
+      </div>
+      <div class="card area-card">
+        <h3>🚌 Piazza Drago</h3>
+        <p class="stat"><b>Vibe:</b> Practical, near the bus station, medium noise.</p>
+        <p class="stat"><b>Beach:</b> Close to central beach and amenities but lacks charm.</p>
+        <p class="stat"><b>Evenings:</b> Mainly useful for transport connections, not an evening destination.</p>
+      </div>
+    </div>
+
+    <details class="maps">
+      <summary>Show area maps</summary>
+      <div class="map-grid">
+        <div class="map-box"><h4>Piazza Milano</h4><iframe src="https://www.google.com/maps?q=Piazza+Milano,+Lido+di+Jesolo,+VE,+Italy&output=embed"></iframe></div>
+        <div class="map-box"><h4>Piazza Mazzini</h4><iframe src="https://www.google.com/maps?q=Piazza+Mazzini,+Lido+di+Jesolo,+VE,+Italy&output=embed"></iframe></div>
+        <div class="map-box"><h4>Piazza Brescia</h4><iframe src="https://www.google.com/maps?q=Piazza+Brescia,+Lido+di+Jesolo,+VE,+Italy&output=embed"></iframe></div>
+        <div class="map-box"><h4>Piazza Drago</h4><iframe src="https://www.google.com/maps?q=Piazza+Drago,+Lido+di+Jesolo,+VE,+Italy&output=embed"></iframe></div>
+      </div>
+    </details>
   </section>
 
+  <!-- ================= FOOD ================= -->
   <section id="food">
-    <h2>2. Restaurants and food</h2>
-    <p>Below are seven family‑friendly places. Addresses are provided along with
-    embedded maps. Booking is recommended for dinner at most places.</p>
-    <div class="restaurant">
-      <h3>Ristorante Tempini</h3>
-      <p><strong>Address:</strong> Via Andrea Bafile 56, 30016 Lido di Jesolo VE【87280705554772†L55-L63】.</p>
-      <p><strong>Why go?</strong> A large, bustling restaurant with homemade pasta, seafood and
-      pizza; good value for families【87280705554772†L55-L63】. Portions are generous and service is
-      friendly.</p>
-      <p><strong>Best for:</strong> casual lunch or dinner.</p>
-      <p><strong>Child‑friendliness:</strong> high – spacious dining room and kids’ menu.</p>
-      <p><strong>Price level:</strong> medium.</p>
-      <p><strong>Booking:</strong> recommended for dinner (queues are common).</p>
-      <iframe
-        src="https://www.google.com/maps?q=Via+Andrea+Bafile+56,+Lido+di+Jesolo,+VE,+Italy&amp;output=embed"></iframe>
+    <div class="section-head">
+      <div class="section-num" style="background:var(--red);">2</div>
+      <h2>Restaurants &amp; food</h2>
     </div>
-    <div class="restaurant">
-      <h3>Ristorante Pizzeria Braies</h3>
-      <p><strong>Address:</strong> Via Andrea Bafile 504, 30016 Lido di Jesolo【318842280102310†L31-L33】.</p>
-      <p><strong>Why go?</strong> Central pizzeria bringing flavours of the Sorrentine peninsula to
-      Jesolo; good pizza and pasta, lively atmosphere.</p>
-      <p><strong>Best for:</strong> dinner on a Piazza Mazzini evening.</p>
-      <p><strong>Child‑friendliness:</strong> good – seating and children’s area.</p>
-      <p><strong>Price level:</strong> medium.</p>
-      <p><strong>Booking:</strong> recommended in the evening.</p>
-      <iframe
-        src="https://www.google.com/maps?q=Via+Andrea+Bafile+504,+Lido+di+Jesolo,+VE,+Italy&amp;output=embed"></iframe>
+    <p class="lede">Seven family-friendly places, with addresses and maps. Ratings below are our own family-fit picks, not aggregated review scores. Booking is recommended for dinner at most.</p>
+
+    <div class="grid-3">
+      <div class="card r-card">
+        <h3>🍝 Ristorante Tempini</h3>
+        <p class="addr">Via Andrea Bafile 56, 30016 Lido di Jesolo VE</p>
+        <div class="stars">★★★★☆ <small>family pick</small></div>
+        <div class="badge-row">
+          <span class="badge badge-green">Kid-friendly: High</span>
+          <span class="badge badge-yellow">€€</span>
+        </div>
+        <p class="why">Large, bustling spot with homemade pasta, seafood and pizza. Generous portions, friendly service. Best for casual lunch or dinner — expect queues, so book ahead.</p>
+        <iframe src="https://www.google.com/maps?q=Via+Andrea+Bafile+56,+Lido+di+Jesolo,+VE,+Italy&output=embed"></iframe>
+      </div>
+      <div class="card r-card">
+        <h3>🍕 Pizzeria Braies</h3>
+        <p class="addr">Via Andrea Bafile 504, 30016 Lido di Jesolo</p>
+        <div class="stars">★★★★☆ <small>family pick</small></div>
+        <div class="badge-row">
+          <span class="badge badge-green">Kid-friendly: Good</span>
+          <span class="badge badge-yellow">€€</span>
+        </div>
+        <p class="why">Central pizzeria with flavours of the Sorrentine peninsula. Good pizza and pasta, lively room. Great for a Piazza Mazzini evening — book ahead.</p>
+        <iframe src="https://www.google.com/maps?q=Via+Andrea+Bafile+504,+Lido+di+Jesolo,+VE,+Italy&output=embed"></iframe>
+      </div>
+      <div class="card r-card">
+        <h3>🍕 La Cambusa</h3>
+        <p class="addr">Via Danimarca 7, 30016 Jesolo</p>
+        <div class="stars">★★★★☆ <small>family pick</small></div>
+        <div class="badge-row">
+          <span class="badge badge-green">Kid-friendly: Good</span>
+          <span class="badge badge-yellow">€€</span>
+          <span class="badge badge-blue">🚶 Closest to you</span>
+        </div>
+        <p class="why">Small, local-favourite pizzeria right in Piazza Milano with thin-crust pizza and Italian classics — your nearest recommended dinner spot. Closed Wednesdays — book ahead.</p>
+        <iframe src="https://www.google.com/maps?q=Via+Danimarca+7,+Jesolo,+VE,+Italy&output=embed"></iframe>
+      </div>
+      <div class="card r-card">
+        <h3>🍦 Chiar di Luna</h3>
+        <p class="addr">Via Giuseppe Verdi 47, 30016 Lido di Jesolo</p>
+        <div class="stars">★★★★★ <small>family pick</small></div>
+        <div class="badge-row">
+          <span class="badge badge-green">Kid-friendly: Very good</span>
+          <span class="badge badge-yellow">€€</span>
+        </div>
+        <p class="why">Friendly restaurant-pizzeria with gluten-free and vegetarian options, fresh fish pasta, and mini pizzas made just for kids. Good on the west side.</p>
+        <iframe src="https://www.google.com/maps?q=Via+Giuseppe+Verdi+47,+Lido+di+Jesolo,+VE,+Italy&output=embed"></iframe>
+      </div>
+      <div class="card r-card">
+        <h3>🐟 Da Omar</h3>
+        <p class="addr">Via Dante Alighieri 21, 30016 Lido di Jesolo</p>
+        <div class="stars">★★★★★ <small>Michelin Guide</small></div>
+        <div class="badge-row">
+          <span class="badge badge-purple">Michelin Guide</span>
+          <span class="badge badge-red">€€€</span>
+          <span class="badge badge-blue">🚶 On your street</span>
+        </div>
+        <p class="why">Michelin-listed seafood spot focused on lagoon cuisine, with an extensive wine list — just a few doors down Via Dante Alighieri from your apartment. Menu is refined and service unhurried, so save it for one special adult-paced dinner. Booking essential.</p>
+        <iframe src="https://www.google.com/maps?q=Via+Dante+Alighieri+21,+Lido+di+Jesolo,+VE,+Italy&output=embed"></iframe>
+      </div>
+      <div class="card r-card">
+        <h3>🍨 Gelateria Malù</h3>
+        <p class="addr">Via Bafile 4, 30016 Jesolo</p>
+        <div class="stars">★★★★★ <small>family pick</small></div>
+        <div class="badge-row">
+          <span class="badge badge-green">Kid-friendly: Very good</span>
+          <span class="badge badge-blue">€</span>
+        </div>
+        <p class="why">Highly rated artisan gelato with clearly labelled vegan options. Perfect after an evening walk — go mid-afternoon to dodge the peak evening queue.</p>
+        <iframe src="https://www.google.com/maps?q=Via+Bafile+4,+Jesolo,+VE,+Italy&output=embed"></iframe>
+      </div>
     </div>
-    <div class="restaurant">
-      <h3>La Cambusa</h3>
-      <p><strong>Address:</strong> Via Danimarca 7, 30016 Jesolo【162383452451195†L77-L80】.</p>
-      <p><strong>Why go?</strong> Small pizzeria in Piazza Milano with thin‑crust pizza and Italian
-      classics; local favourite【176662215982474†L416-L421】.</p>
-      <p><strong>Best for:</strong> dinner near your hotel if staying in the Piazza Milano area.</p>
-      <p><strong>Child‑friendliness:</strong> good – limited high‑chairs but relaxed setting.</p>
-      <p><strong>Price level:</strong> medium.</p>
-      <p><strong>Booking:</strong> advisable for dinner; closed on Wednesdays.</p>
-      <iframe
-        src="https://www.google.com/maps?q=Via+Danimarca+7,+Jesolo,+VE,+Italy&amp;output=embed"></iframe>
-    </div>
-    <div class="restaurant">
-      <h3>Chiar di Luna</h3>
-      <p><strong>Address:</strong> Via Giuseppe Verdi 47, 30016 Lido di Jesolo【953050838834119†L31-L34】.</p>
-      <p><strong>Why go?</strong> Friendly restaurant‑pizzeria with gluten‑free and vegetarian options
-      and fresh fish pasta; makes mini pizzas for kids【176662215982474†L423-L430】.</p>
-      <p><strong>Best for:</strong> relaxed dinner or lunch on the west side.</p>
-      <p><strong>Child‑friendliness:</strong> very good – high chairs and kids’ menu.</p>
-      <p><strong>Price level:</strong> medium.</p>
-      <p><strong>Booking:</strong> recommended.</p>
-      <iframe
-        src="https://www.google.com/maps?q=Via+Giuseppe+Verdi+47,+Lido+di+Jesolo,+VE,+Italy&amp;output=embed"></iframe>
-    </div>
-    <div class="restaurant">
-      <h3>Da Omar</h3>
-      <p><strong>Address:</strong> Via Dante Alighieri 21, 30016 Lido di Jesolo (from the restaurant’s official site【312950271666487†L83-L100】).</p>
-      <p><strong>Why go?</strong> Michelin‑listed seafood bistro focusing on lagoon cuisine and an
-      extensive wine list【312950271666487†L83-L100】; ideal for one special meal.</p>
-      <p><strong>Best for:</strong> adult‑focused dinner.</p>
-      <p><strong>Child‑friendliness:</strong> moderate – the menu is refined and service is
-      slow. Choose only if children can handle a longer meal.</p>
-      <p><strong>Price level:</strong> high.</p>
-      <p><strong>Booking:</strong> essential.</p>
-      <iframe
-        src="https://www.google.com/maps?q=Via+Dante+Alighieri+21,+Lido+di+Jesolo,+VE,+Italy&amp;output=embed"></iframe>
-    </div>
-    <div class="restaurant">
-      <h3>Gelateria Malù</h3>
-      <p><strong>Address:</strong> Via Bafile 4, 30016 Jesolo【878300923873704†L96-L100】.</p>
-      <p><strong>Why go?</strong> Highly rated artisan gelateria with a wide range of flavours,
-      including clearly labelled vegan options【640803505941084†L312-L325】. Perfect after an evening walk.</p>
-      <p><strong>Best for:</strong> dessert or afternoon treat.</p>
-      <p><strong>Child‑friendliness:</strong> very good – kids love the variety.</p>
-      <p><strong>Price level:</strong> low.</p>
-      <p><strong>Booking:</strong> not necessary; avoid peak evening queues by visiting
-      in the afternoon【640803505941084†L416-L434】.</p>
-      <iframe
-        src="https://www.google.com/maps?q=Via+Bafile+4,+Jesolo,+VE,+Italy&amp;output=embed"></iframe>
-    </div>
-    <div class="restaurant">
-      <h3>Simple beach lunch</h3>
-      <p>On beach days, keep lunch uncomplicated. Use your hotel’s beach bar, a nearby
-      supermarket for picnic supplies or one of the above pizzerias for a quick
-      pizza or salad. Children often prefer a light lunch and a more substantial
-      dinner.</p>
+
+    <div class="callout" style="background:var(--yellow-pale); border-color:var(--yellow-dark);">
+      <div class="emoji">🥪</div>
+      <div><b>Beach-day lunches:</b> Keep it simple — apartment/beach bar, supermarket picnic supplies, or a quick pizza. Kids usually prefer a light lunch and a bigger dinner.</div>
     </div>
   </section>
 
-  <section id="daytrips">
-    <h2>3. Day trips from Lido di Jesolo</h2>
-    <p>Two day‑trips are enough for this holiday. They are easy to organise without a
-    car; transport times and effort levels are noted. Maps show the destination.</p>
-    <h3>Venice</h3>
-    <p><strong>Effort level:</strong> medium. Travel by ATVO bus to Punta Sabbioni (approx.
-    35 min) then boat to Venice (30–35 min). Avoid days when the Venice access fee
-    applies (1–7 June and 12 June) and go on 8–11 June instead.</p>
-    <p><strong>Why go?</strong> A unique experience for adults and children—see Piazza
-    San Marco, walk along the waterfront, enjoy gelato. Keep the day
-    simple: one neighbourhood (San Marco), lunch and a gelato.</p>
-    <p><strong>Suitable with children?</strong> Yes, if you avoid crowds and return before
-    late afternoon. Skip museums and long queues.</p>
-    <p><strong>Relaxed itinerary:</strong></p>
-    <ul>
-      <li>Morning: leave after breakfast; bus to Punta Sabbioni, then ferry to San Zaccaria.</li>
-      <li>Lunch: easy pasta or pizza away from the most crowded streets.</li>
-      <li>Afternoon: visit Piazza San Marco, look at St Mark’s Basilica and Doge’s
-      Palace from outside; walk along the Riva degli Schiavoni waterfront; gelato.</li>
-      <li>Return: head back mid‑afternoon to avoid tired children.</li>
-    </ul>
-    <p><strong>What to skip:</strong> gondola rides, Rialto Bridge crowds, multiple museums
-    or islands. Venice is best enjoyed slowly with kids.</p>
-    <iframe
-      src="https://www.google.com/maps?q=Venice,+Italy&amp;output=embed"></iframe>
-    <h3>Caorle</h3>
-    <p><strong>Effort level:</strong> easy to medium. Reachable by bus (approx. 90–120 min) or
-    taxi. Combines a colourful historic centre with beach and seafront walks.</p>
-    <p><strong>Why go?</strong> Charming old town, colourful houses, easy promenade
-    along the seafront to the Sanctuary of Madonna dell’Angelo; quieter than
-    Venice.</p>
-    <p><strong>Suitable with children?</strong> Yes – short walking distances and
-    plenty of ice‑cream stops.</p>
-    <p><strong>Relaxed itinerary:</strong></p>
-    <ul>
-      <li>Morning: travel after breakfast; arrive and explore the old town.</li>
-      <li>Lunch: simple pasta or pizza in one of Caorle’s restaurants.</li>
-      <li>Afternoon: walk the seafront, visit the little church of the Madonna
-      dell’Angelo and the rock carvings.</li>
-      <li>Evening: return to Jesolo; light dinner.</li>
-    </ul>
-    <p><strong>What to skip:</strong> combining Caorle with another big excursion.
-    Resist the temptation to add Aquafollie water park unless the family wants a
-    full day of slides.</p>
-    <iframe
-      src="https://www.google.com/maps?q=Caorle,+Italy&amp;output=embed"></iframe>
-    <h3>Optional: Murano &amp; Burano</h3>
-    <p>If your family enjoys boat rides and colourful houses, you can consider
-    visiting the lagoon islands. However, doing this in addition to Venice can
-    make the holiday feel rushed. The trip involves taking boats from Punta Sabbioni
-    or Venice to Murano (glass‑blowing island) and Burano (lace &amp;
-    colourful houses). Limit stops and avoid combining with central Venice on the
-    same day.</p>
-    <iframe
-      src="https://www.google.com/maps?q=Burano,+Italy&amp;output=embed"></iframe>
+  <!-- ================= DAY-BY-DAY ================= -->
+  <section id="schedule">
+    <div class="section-head">
+      <div class="section-num" style="background:var(--blue);">3</div>
+      <h2>Day-by-day itinerary</h2>
+    </div>
+    <p class="lede">12 nights, 1–13 July 2026. The two day trips are booked into <b>fee-free</b> Venice-access days (see the Getting There / Tips notes) with a rest day either side.</p>
+
+    <div class="path">
+      <div class="day-node"><div class="day-circle" style="background:var(--green);">1</div>
+        <div class="day-card big"><div class="day-title">Wed 1 July — Arrival day</div>
+          <div class="day-sub">Check-in window 16:00–19:00 · pick up keys at Via Goffredo Mameli 103A</div>
+          <div class="day-table">
+            <div><span class="lbl">Morning</span>Travel day / flight to VCE.</div>
+            <div><span class="lbl">Lunch</span>En route, or on arrival.</div>
+            <div><span class="lbl">Afternoon</span>Transfer to Jesolo, collect keys, check in, unpack.</div>
+            <div><span class="lbl">Evening</span>Short beach walk; easy dinner at La Cambusa or Tempini.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-node"><div class="day-circle" style="background:var(--blue);">2</div>
+        <div class="day-card big"><div class="day-title">Thu 2 July — Beach &amp; settle in</div>
+          <div class="day-table">
+            <div><span class="lbl">Morning</span>First full beach morning — rent sunbeds.</div>
+            <div><span class="lbl">Lunch</span>Beach bar or pizza.</div>
+            <div><span class="lbl">Afternoon</span>Rest at the apartment; pool if available.</div>
+            <div><span class="lbl">Evening</span>Dinner at La Cambusa; walk along Via Altinate.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-node"><div class="day-circle" style="background:var(--blue);">3</div>
+        <div class="day-card big"><div class="day-title">Fri 3 July — Beach day</div>
+          <div class="day-sub">Venice access-fee day — staying local</div>
+          <div class="day-table">
+            <div><span class="lbl">Morning</span>Beach morning.</div>
+            <div><span class="lbl">Lunch</span>Simple lunch.</div>
+            <div><span class="lbl">Afternoon</span>Rest; optional Tropicarium Park if cloudy.</div>
+            <div><span class="lbl">Evening</span>Piazza Brescia, Ferris wheel; dinner at Tempini.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-node"><div class="day-circle" style="background:var(--blue);">4</div>
+        <div class="day-card big"><div class="day-title">Sat 4 July — Beach day</div>
+          <div class="day-table">
+            <div><span class="lbl">Morning</span>Beach.</div>
+            <div><span class="lbl">Lunch</span>Simple lunch.</div>
+            <div><span class="lbl">Afternoon</span>Rest.</div>
+            <div><span class="lbl">Evening</span>Dinner at Braies or Tempini.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-node"><div class="day-circle" style="background:var(--blue);">5</div>
+        <div class="day-card big"><div class="day-title">Sun 5 July — Lazy beach day</div>
+          <div class="day-table">
+            <div><span class="lbl">Morning</span>Lazy beach morning.</div>
+            <div><span class="lbl">Lunch</span>Beach or apartment lunch.</div>
+            <div><span class="lbl">Afternoon</span>Rest and reading.</div>
+            <div><span class="lbl">Evening</span>Quiet dinner in Piazza Milano; gelato.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-node"><div class="day-circle" style="background:var(--blue);">6</div>
+        <div class="day-card big"><div class="day-title">Mon 6 July — Beach + bikes</div>
+          <div class="day-table">
+            <div><span class="lbl">Morning</span>Beach.</div>
+            <div><span class="lbl">Lunch</span>Beach bar lunch.</div>
+            <div><span class="lbl">Afternoon</span>Short bike ride along Jesolo's cycle paths.</div>
+            <div><span class="lbl">Evening</span>Gelato at Malù; early night before Venice.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-node"><div class="day-circle" style="background:var(--purple);">7</div>
+        <div class="day-card big"><div class="day-title">Tue 7 July — Venice day trip ⛵</div>
+          <span class="stamp">🎫 PASSPORT STAMP: VENICE</span>
+          <div class="fee-free">✅ Fee-free day — no Venice access charge or pre-registration needed today.</div>
+          <div class="day-table" style="margin-top:10px;">
+            <div><span class="lbl">Morning</span>ATVO bus to Punta Sabbioni (~35 min), then boat to San Zaccaria (~30–35 min).</div>
+            <div><span class="lbl">Lunch</span>Casual pasta or pizza away from the busiest streets.</div>
+            <div><span class="lbl">Afternoon</span>Piazza San Marco, Riva degli Schiavoni waterfront walk, gelato.</div>
+            <div><span class="lbl">Evening</span>Head back mid-afternoon to avoid tired kids; light dinner in Jesolo.</div>
+          </div>
+          <div class="skip-box"><b>Skip:</b> gondola rides, Rialto crowds, multiple museums or islands. Venice is best enjoyed slowly with kids.</div>
+          <details class="maps"><summary>Show map</summary>
+            <iframe src="https://www.google.com/maps?q=Venice,+Italy&output=embed" style="border-radius:12px; margin-top:10px;"></iframe>
+          </details>
+        </div>
+      </div>
+
+      <div class="day-node"><div class="day-circle" style="background:var(--blue);">8</div>
+        <div class="day-card big"><div class="day-title">Wed 8 July — Recovery beach day</div>
+          <div class="day-table">
+            <div><span class="lbl">Morning</span>Easy beach morning after Venice.</div>
+            <div><span class="lbl">Lunch</span>Simple lunch.</div>
+            <div><span class="lbl">Afternoon</span>Rest at the apartment.</div>
+            <div><span class="lbl">Evening</span>Dinner at Chiar di Luna (great gluten-free/fish-pasta option).</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-node"><div class="day-circle" style="background:var(--purple);">9</div>
+        <div class="day-card big"><div class="day-title">Thu 9 July — Caorle day trip 🎨</div>
+          <span class="stamp">🎫 PASSPORT STAMP: CAORLE</span>
+          <div class="day-table" style="margin-top:10px;">
+            <div><span class="lbl">Morning</span>Bus or taxi to Caorle (~90–120 min); explore the colourful old town.</div>
+            <div><span class="lbl">Lunch</span>Simple pasta or pizza in Caorle.</div>
+            <div><span class="lbl">Afternoon</span>Seafront walk to the Madonna dell'Angelo sanctuary.</div>
+            <div><span class="lbl">Evening</span>Return to Jesolo; light dinner or take-away pizza.</div>
+          </div>
+          <div class="skip-box"><b>Skip:</b> pairing Caorle with another big excursion, or the Aquafollie water park unless everyone wants a full slide day.</div>
+          <details class="maps"><summary>Show map</summary>
+            <iframe src="https://www.google.com/maps?q=Caorle,+Italy&output=embed" style="border-radius:12px; margin-top:10px;"></iframe>
+          </details>
+        </div>
+      </div>
+
+      <div class="day-node"><div class="day-circle" style="background:var(--yellow-dark);">10</div>
+        <div class="day-card big"><div class="day-title">Fri 10 July — Beach or water park</div>
+          <div class="day-sub">Venice access-fee day — staying local</div>
+          <div class="day-table">
+            <div><span class="lbl">Morning</span>Optional Caribe Bay water park (10:00–18:00) or beach.</div>
+            <div><span class="lbl">Lunch</span>Lunch at the park or beach.</div>
+            <div><span class="lbl">Afternoon</span>Continue water fun or rest at the apartment.</div>
+            <div><span class="lbl">Evening</span>Quiet dinner in Piazza Milano; gelato.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-node"><div class="day-circle" style="background:var(--blue);">11</div>
+        <div class="day-card big"><div class="day-title">Sat 11 July — Beach + Piazza Mazzini</div>
+          <div class="day-table">
+            <div><span class="lbl">Morning</span>Beach.</div>
+            <div><span class="lbl">Lunch</span>Simple lunch.</div>
+            <div><span class="lbl">Afternoon</span>Rest.</div>
+            <div><span class="lbl">Evening</span>Evening stroll in Piazza Mazzini; dinner at Braies.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-node"><div class="day-circle" style="background:var(--green);">12</div>
+        <div class="day-card big"><div class="day-title">Sun 12 July — Final beach day</div>
+          <div class="day-table">
+            <div><span class="lbl">Morning</span>Final beach morning — take photos and enjoy.</div>
+            <div><span class="lbl">Lunch</span>Favourite lunch spot.</div>
+            <div><span class="lbl">Afternoon</span>Pack and shop for souvenirs.</div>
+            <div><span class="lbl">Evening</span>Farewell dinner at your preferred restaurant.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-node"><div class="day-circle" style="background:var(--red);">13</div>
+        <div class="day-card big"><div class="day-title">Mon 13 July — Departure</div>
+          <div class="day-sub">Check-out window 08:00–10:00</div>
+          <div class="day-table">
+            <div><span class="lbl">Morning</span>Return keys, check out 08:00–10:00.</div>
+            <div><span class="lbl">Lunch</span>—</div>
+            <div><span class="lbl">Afternoon</span>Transfer to Venice Marco Polo Airport (~35–45 min).</div>
+            <div><span class="lbl">Evening</span>Flight home.</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section id="schedule" class="daily-plan">
-    <h2>4. Relaxed day‑by‑day structure</h2>
-    <p>The schedule below assumes arrival on 1 June and departure around 11 or 12 June.
-    Feel free to shift days according to your flights.</p>
-    <table>
-      <thead>
-        <tr>
-          <th>Day</th>
-          <th>Morning</th>
-          <th>Lunch</th>
-          <th>Afternoon</th>
-          <th>Evening</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1 (June 1)</td>
-          <td>Arrive and settle; short beach walk.</td>
-          <td>Simple lunch near hotel.</td>
-          <td>Unpack and rest.</td>
-          <td>Easy dinner at La Cambusa or Tempini; early night.</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>First full beach morning – rent sunbeds.</td>
-          <td>Beach bar or pizza.</td>
-          <td>Rest at hotel; pool if available.</td>
-          <td>Dinner at La Cambusa; evening walk along Via Altinate.</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Beach morning.</td>
-          <td>Simple lunch.</td>
-          <td>Rest. Optional: Tropicarium Park if cloudy.</td>
-          <td>Visit Piazza Brescia; ride the Ferris wheel; dinner at Tempini.</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>Day trip to Venice (bus to Punta Sabbioni then boat).</td>
-          <td>Lunch in Venice.</td>
-          <td>San Marco area, waterfront walk, gelato.</td>
-          <td>Return to Jesolo; light dinner near hotel.</td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td>Lazy beach morning.</td>
-          <td>Beach or hotel lunch.</td>
-          <td>Rest and reading.</td>
-          <td>Dinner at Tempini or Braies; early night.</td>
-        </tr>
-        <tr>
-          <td>6</td>
-          <td>Optional: Caribe Bay water park (open 10:00–18:00) or another beach day.</td>
-          <td>Lunch at the park or beach.</td>
-          <td>Continue water fun or rest at hotel.</td>
-          <td>Quiet dinner in Piazza Milano; gelato.</td>
-        </tr>
-        <tr>
-          <td>7</td>
-          <td>Beach morning.</td>
-          <td>Simple lunch.</td>
-          <td>Rest.</td>
-          <td>Evening in Piazza Mazzini; dinner at Braies; return early.</td>
-        </tr>
-        <tr>
-          <td>8</td>
-          <td>Day trip to Caorle.</td>
-          <td>Lunch in Caorle.</td>
-          <td>Stroll the old town and seafront.</td>
-          <td>Return; light dinner or take‑away pizza.</td>
-        </tr>
-        <tr>
-          <td>9</td>
-          <td>Beach morning.</td>
-          <td>Beach bar lunch.</td>
-          <td>Optional bike ride along Jesolo’s cycle paths (short distance with young kids).</td>
-          <td>Gelato at Malù; early night.</td>
-        </tr>
-        <tr>
-          <td>10 (June 10)</td>
-          <td>Final beach day; take photos and enjoy.</td>
-          <td>Favourite lunch spot.</td>
-          <td>Pack and shop for souvenirs.</td>
-          <td>Farewell dinner at your preferred restaurant.</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
+  <!-- ================= PRACTICAL TIPS ================= -->
   <section id="practical">
-    <h2>5. Practical family tips</h2>
-    <ul class="tip-list">
-      <li><strong>Venice access fee:</strong> In 2026 the city charges an entry fee on 1–7
-      June and 12 June between 08:30 and 16:00; go on 8–11 June to avoid it.</li>
-      <li><strong>Advance bookings:</strong> reserve your hotel with beach service, restaurant
-      dinners, Caribe Bay tickets and, if necessary, the Venice access fee.</li>
-      <li><strong>Transport:</strong> Use ATVO buses from Jesolo to Punta Sabbioni (for
-      Venice) or to Caorle. The bus and ferry combination is scenic and avoids
-      parking hassles.</li>
-      <li><strong>Beach tips:</strong> Ensure your hotel includes sunbeds or reserve a spot in
-      advance. Ask about towel rental and kids’ playgrounds at the beach club.</li>
-      <li><strong>Rainy days:</strong> Consider Tropicarium Park, La Fabbrica della
-      Scienza, a long lunch, or quiet time at the hotel pool.</li>
-      <li><strong>Avoid:</strong> booking accommodation in Piazza Mazzini if you dislike
-      late‑night noise; combining Venice with Murano &amp; Burano in one day;
-      overloading your schedule. Stick to one main activity per day.</li>
-      <li><strong>Stay calm:</strong> Embrace slow mornings, afternoon naps and early
-      evenings. Children aged 5–10 will enjoy the beach more than a packed
-      itinerary. Repeat favourite restaurants instead of chasing new ones every
-      night.</li>
-    </ul>
+    <div class="section-head">
+      <div class="section-num" style="background:var(--yellow-dark);">4</div>
+      <h2>Practical family tips</h2>
+    </div>
+    <div class="tip-grid">
+      <div class="card tip-card"><div class="tip-check">✓</div><div><b>Venice access fee:</b> Applies 8:30–16:00 on 3, 4, 5, 10, 11, 12, 17, 18, 19, 24, 25, 26 July 2026. Your trip is booked for Tue 7 July — a fee-free day, so no charge or pre-registration needed.</div></div>
+      <div class="card tip-card"><div class="tip-check">✓</div><div><b>Book ahead:</b> Beach sunbeds, restaurant dinners, Caribe Bay tickets, and any airport transfer you want fixed-price.</div></div>
+      <div class="card tip-card"><div class="tip-check">✓</div><div><b>Transport:</b> ATVO buses run from Jesolo to Punta Sabbioni (for Venice) and to Caorle — scenic, and no parking hassle.</div></div>
+      <div class="card tip-card"><div class="tip-check">✓</div><div><b>Beach setup:</b> Confirm sunbed access near the apartment or reserve in advance. Ask about towel rental and kids' playgrounds at the beach club.</div></div>
+      <div class="card tip-card"><div class="tip-check">✓</div><div><b>July heat:</b> This is peak summer — plan beach time before 11:00 and after 16:00, pack sun protection for the kids, keep everyone hydrated, and don't fight a midday siesta.</div></div>
+      <div class="card tip-card avoid"><div class="tip-check">✕</div><div><b>Avoid:</b> spending evenings in Piazza Mazzini if noise bothers you at night; combining Venice with Murano &amp; Burano in one day; more than one main activity per day.</div></div>
+    </div>
+    <div class="callout" style="margin-top:16px;">
+      <div class="emoji">🐢</div>
+      <div><b>Stay calm:</b> slow mornings, afternoon rest, early evenings. Kids aged 5–10 enjoy the beach more than a packed schedule — repeat favourite restaurants instead of chasing something new every night.</div>
+    </div>
   </section>
 
+  <!-- ================= SUMMARY ================= -->
   <section id="summary">
-    <h2>6. Final recommendation</h2>
-    <p><strong>Where to stay:</strong> Choose a hotel near Piazza Milano for a calm
-    atmosphere, wide family‑friendly beach and pleasant evening walks.</p>
-    <p><strong>Restaurants to prioritise:</strong> La Cambusa and Tempini for reliable
-    lunches and dinners; Braies for a night out in Piazza Mazzini; Chiar di Luna
-    for gluten‑free and fish pasta; Da Omar for one special adult meal; and Gelateria
-    Malù for daily gelato.</p>
-    <p><strong>Day trips:</strong> Plan only Venice and Caorle. Venice should be done on a
-    non‑fee day (8–11 June) using bus and ferry; Caorle is an easy seaside town
-    excursion. Only add Murano/Burano if everyone is enthusiastic about a boat day.</p>
-    <p><strong>Rhythm:</strong> Keep mornings on the beach, simple lunches, restful afternoons
-    and gentle evening walks. Only one major activity per day ensures that the
-    holiday remains enjoyable for both parents and children.</p>
+    <div class="card trophy-card">
+      <div class="big-emoji">🏆</div>
+      <h2>Trip Recap</h2>
+      <p style="color:var(--ink-soft); max-width:560px; margin:6px auto 0;">Everything you need for a calm, well-paced 12 nights in Jesolo.</p>
+      <div class="summary-grid">
+        <div class="card"><h3>✈️ Getting there</h3><p>Land at Venice Marco Polo (VCE), then ATVO bus, taxi, or rental car to Via Dante Alighieri 98 (~35–45 min). Check-in 16:00–19:00 on 1 July.</p></div>
+        <div class="card"><h3>🏡 Where you're staying</h3><p>Piazza Milano area — calm, spacious family beach, easy evening walks. Confirmed by the apartment address.</p></div>
+        <div class="card"><h3>🍽️ Restaurants to prioritise</h3><p>La Cambusa &amp; Tempini for regular meals, Braies for a Piazza Mazzini night out, Chiar di Luna for gluten-free/fish pasta, Da Omar (same street!) for one special dinner, Malù for daily gelato.</p></div>
+        <div class="card"><h3>⛵ Day trips</h3><p>Venice on Tue 7 July (fee-free) and Caorle on Thu 9 July, with a rest day on either side. Add Murano/Burano only if everyone's keen on a full boat day.</p></div>
+      </div>
+
+      <div class="hacks-head">🧠 Local hacks (things most tourists miss)</div>
+      <p class="hacks-sub">A few money- and time-saving tricks that don't make it into most guidebooks.</p>
+      <div class="tip-grid">
+        <div class="card tip-card hack"><div class="tip-check">1</div><div><b>Your kids don't pay the Venice fee — but still need a QR code.</b> Children under 14 are exempt from the access fee entirely, including on the fee-days above. The catch: everyone (even exempt kids) still has to register online beforehand to get the free exemption QR code, so don't skip that step just because it's "free."</div></div>
+        <div class="card tip-card hack"><div class="tip-check">2</div><div><b>The fee only applies 8:30–16:00.</b> Even on a charged date, arriving before 8:30 or after 16:00 means no fee at all. Worth knowing as a backup if your fee-free Tuesday ever has to shift.</div></div>
+        <div class="card tip-card hack"><div class="tip-check">3</div><div><b>Refill, don't rebuy, water in Venice.</b> Tap water is safe to drink, and free public fountains ("nasoni") are scattered all over the city. Bring refillable bottles for the kids instead of paying €2–3 a bottle in the summer heat.</div></div>
+        <div class="card tip-card hack"><div class="tip-check">4</div><div><b>Walk a few streets back from Piazza San Marco to eat.</b> Restaurants ringing the square mark prices up heavily for the view. The same quality is cheaper just a couple of streets inland — handy since you're already keeping the day simple.</div></div>
+        <div class="card tip-card hack"><div class="tip-check">5</div><div><b>Shops close for a few hours midday.</b> Many Italian shops and some supermarkets pause for "riposo" in the early afternoon, including in Jesolo and Caorle. Do souvenir/grocery runs in the morning or after 16:00 rather than right after lunch.</div></div>
+        <div class="card tip-card hack"><div class="tip-check">6</div><div><b>Dinner starts late — ask for early seating anyway.</b> Most Italian restaurants don't really get going until 19:30–20:00, which is late for a 5-year-old. Family places like Tempini and La Cambusa are used to early diners; just ask when you book.</div></div>
+      </div>
+    </div>
   </section>
 
-  <footer style="text-align: center; padding: 10px; font-size: 0.8em; color: #666;">
-    © 2026 – Family travel plan compiled using up‑to‑date sources and
-    recommendations. All times and services are subject to change; always confirm
-    locally.
-  </footer>
+</div>
+
+<footer>© 2026 · Family travel plan · Times, fees and opening hours change — always confirm locally before you go.</footer>
+
 </body>
 </html>
